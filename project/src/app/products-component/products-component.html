@@ -1,1 +1,11 @@
-<p>products-component works!</p>
+<input [(ngModel)]="productTitle" name="title" placeholder="Product Title" />
+
+<input [(ngModel)]="productPrice" name="price" type="number" placeholder="Price" />
+
+<button (click)="addProduct()">Add Product</button>
+
+<ul>
+  <li *ngFor="let p of products">
+    {{ p.title }} - ₹{{ p.price }}
+  </li>
+</ul>

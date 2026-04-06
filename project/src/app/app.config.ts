@@ -6,6 +6,7 @@ import { provideState, provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { productReducer } from './product-store/products.reducer';
 import { ProductEffects } from './product-store/products.effects';
+import { Amplify } from 'aws-amplify';
 
 export const appConfig: ApplicationConfig = {
   providers: [

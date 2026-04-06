@@ -10,21 +10,22 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProductState } from './product-store/products.reducer';
 import { OnInit } from '@angular/core';
+import { ProductsComponent } from './products-component/products-component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, FormsModule, AsyncPipe],
+  imports: [ CommonModule, FormsModule, AsyncPipe, ProductsComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
-export class App implements OnInit {
-  products$!: Observable<ProductType[]>;
+export class App {
+  // products$!: Observable<ProductType[]>;
 
-  constructor(private store: Store<{ product: ProductType }>) {}
+  // constructor(private store: Store<{ product: ProductType }>) {}
 
-  ngOnInit(): void {
-    this.store.dispatch(loadProducts());
-    this.products$ = this.store.select(selectAllProducts);
-    console.log(this.products$)
-  }
+  // ngOnInit(): void {
+  //   this.store.dispatch(loadProducts());
+  //   this.products$ = this.store.select(selectAllProducts);
+  //   console.log(this.products$)
+  // }
 }
